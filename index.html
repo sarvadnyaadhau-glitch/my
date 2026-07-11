@@ -12,7 +12,12 @@
         #log { color: #888; margin-top: 20px; font-style: italic; }
     </style>
 
+    <!-- Monetag Verification -->
     <meta name="monetag" content="b00ccafba279ae010eb77eb9097bd80f">
+
+    <!-- MONETAG VIGNETTE CODE -->
+    <script>(function(s){s.dataset.zone='11271687',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
 <body>
 
     <h1>Level: <span id="level-id">1</span></h1>
@@ -44,17 +49,16 @@
 
         function levelComplete() {
             document.getElementById('timer').innerText = "Level Complete!";
-            document.getElementById('log').innerText = "Triggering Monetag Ad... (No Popups)";
+            document.getElementById('log').innerText = "Forcing Monetag Vignette Ad...";
             
-            // 2. MONETAG AD TRIGGER (Bina popup ke)
-            if (typeof showMonetagAd === 'function') { 
-                showMonetagAd(); 
+            // 🔥 YAHAN SE AD AUTOMATIC HAR 10 SEC BAAD CALL HOGI
+            if (typeof show_11271687 === 'function') {
+                show_11271687();
             } else {
-                // Agar script nahi hai, toh sirf console me print hoga, screen par koi popup nahi aayega
-                console.log("Monetag script missing, skipping ad call.");
+                console.log("Ad script load ho rahi hai, next transition par dikhegi.");
             }
 
-            // Seedha next level par bhejo bina break liye
+            // Agle level par bhejo bina game roke
             nextLevel();
         }
 
