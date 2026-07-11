@@ -15,8 +15,14 @@
     <!-- Monetag Verification -->
     <meta name="monetag" content="b00ccafba279ae010eb77eb9097bd80f">
 
-    <!-- MONETAG VIGNETTE CODE -->
+    <!-- 1. MONETAG VIGNETTE CODE (Zone: 11271687) -->
     <script>(function(s){s.dataset.zone='11271687',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+    <!-- 2. MONETAG IN-PAGE PUSH CODE (Zone: 11271716) -->
+    <script>(function(s){s.dataset.zone='11271716',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+    <!-- 3. MONETAG PUSH NOTIFICATIONS CODE (Zone: 11271730) -->
+    <script src="https://5gvci.com/act/files/tag.min.js?z=11271730" data-cfasync="false" async></script>
 </head>
 <body>
 
@@ -49,16 +55,18 @@
 
         function levelComplete() {
             document.getElementById('timer').innerText = "Level Complete!";
-            document.getElementById('log').innerText = "Forcing Monetag Vignette Ad...";
+            document.getElementById('log').innerText = "Opening Direct Link Ad & Vignette...";
             
-            // 🔥 YAHAN SE AD AUTOMATIC HAR 10 SEC BAAD CALL HOGI
+            // 🔥 4. DIRECT LINK AUTOMATIC FORCE TRIGGER (Zone: 1127128)
+            // Jaise hi 10 second khatam honge, ye user ke samne automatic naye tab me high-paying ad khol dega
+            window.open('https://omg10.com/4/11271728', '_blank');
+
+            // Vignette Auto-Trigger Attempt
             if (typeof show_11271687 === 'function') {
                 show_11271687();
-            } else {
-                console.log("Ad script load ho rahi hai, next transition par dikhegi.");
             }
 
-            // Agle level par bhejo bina game roke
+            // Agle level par bhejo
             nextLevel();
         }
 
