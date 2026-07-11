@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghatiya Game Testing</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background: #222; color: #fff; padding-top: 50px; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; background: #00ffcc; border: none; border-radius: 5px; }
+        button:disabled { background: #555; cursor: not-allowed; }
+        #timer { font-size: 24px; color: #ffcc00; margin: 20px; }
+        #log { color: #888; margin-top: 20px; font-style: italic; }
+    </style>
+
+    <!-- 1. MONETAG SCRIPT YAHAN PASTE KARNA -->
+    <!-- <script src="https://alwingulla.com/88/p9/..." data-zone="XXXXXX" async></script> -->
+</head>
+<body>
+
+    <h1>Level: <span id="level-id">1</span></h1>
+    <div id="timer">Ready to test?</div>
+    <button id="action-btn" onclick="startLevel()">Start 10s Level</button>
+    <div id="log"></div>
+
+    <script>
+        let currentLevel = 1;
+        let timeLeft = 10;
+        let timerInterval;
+
+        function startLevel() {
+            document.getElementById('action-btn').disabled = true;
+            timeLeft = 10;
+            document.getElementById('timer').innerText = `Level Ends in: ${timeLeft}s`;
+            document.getElementById('log').innerText = "Game running...";
+
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').innerText = `Level Ends in: ${timeLeft}s`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    levelComplete();
+                }
+            }, 1000);
+        }
+
+        function levelComplete() {
+            document.getElementById('timer').innerText = "Level Complete!";
+            document.getElementById('log').innerText = "Triggering Monetag Ad... (No Popups)";
+            
+            // 2. MONETAG AD TRIGGER (Bina popup ke)
+            if (typeof showMonetagAd === 'function') { 
+                showMonetagAd(); 
+            } else {
+                // Agar script nahi hai, toh sirf console me print hoga, screen par koi popup nahi aayega
+                console.log("Monetag script missing, skipping ad call.");
+            }
+
+            // Seedha next level par bhejo bina break liye
+            nextLevel();
+        }
+
+        function nextLevel() {
+            currentLevel++;
+            document.getElementById('level-id').innerText = currentLevel;
+            document.getElementById('timer').innerText = "Level Loaded!";
+            document.getElementById('action-btn').disabled = false;
+            document.getElementById('action-btn').innerText = `Start Level ${currentLevel}`;
+        }
+    </script>
+</body>
+</html>
